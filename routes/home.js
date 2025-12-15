@@ -28,6 +28,6 @@ const msgs = [
   },
 ];
 
-msgs.get("/", (req, res) => {
-  res.render("homepage", { title: "Mini Messageboard", messages: messages });
+msgRouter.get("/", (req, res) => {
+  res.render("home", { title: "Mini Messageboard", messages: msgs });
 });
