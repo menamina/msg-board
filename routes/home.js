@@ -27,3 +27,7 @@ const msgs = [
     added: new Date(),
   },
 ];
+
+msgs.get("/", (req, res) => {
+  res.render("homepage", { title: "Mini Messageboard", messages: messages });
+});
