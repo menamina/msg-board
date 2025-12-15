@@ -1,14 +1,15 @@
 const { Router } = require("express");
 const newMsgRouter = Router();
+const { msgs } = require("./home");
 
-newMsgRouter.get("/new", (req, res) => {
+newMsgRouter.get("/", (req, res) => {
   res.render("form");
 });
 
-newMsgRouter.post("/new", (req, res) => {
-  messages.push({
+newMsgRouter.post("/", (req, res) => {
+  msgs.push({
     msg: req.body.msg,
-    user: req.body.name,
+    user: req.body.user,
     added: new Date(),
   });
   res.redirect("/");
