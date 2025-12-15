@@ -31,3 +31,5 @@ const msgs = [
 msgRouter.get("/", (req, res) => {
   res.render("home", { title: "Mini Messageboard", messages: msgs });
 });
+
+module.exports = msgRouter;
