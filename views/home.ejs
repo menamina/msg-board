@@ -1,11 +1,16 @@
 <html>
   <body>
+    <style>
+      .msg {
+        display: flex;
+        gap: 15px;
+      }
+    </style>
     <h1><%= title %></h1>
-    <% messages.forEach((message) => { %>
-    <div>
-      <p>Sender: <%= message.user %></p>
-      <p><%= message.msg %></p>
-      <p>date added: <%=message.added %></p>
+    <% messages.forEach((message, index) => { %>
+    <div class="msg">
+      <p>From: <%= message.user %></p>
+      <p><a href="/msg/<%= index%>"> Open message?</a></p>
     </div>
     <% }) %>
     <button><a href="/new"> new msg!!</a></button>

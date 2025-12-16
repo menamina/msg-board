@@ -3,7 +3,7 @@ const app = express();
 const path = require("node:path");
 const { msgRouter } = require("./routes/home");
 const newMsgRouter = require("./routes/new");
-
+const specificMsg = require("./routes/specificMsg");
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
@@ -11,6 +11,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use("/", msgRouter);
 app.use("/new", newMsgRouter);
+app.use("/msg/:index", specificMsg);
 
 app.listen(3000, (error) => {
   if (!error) {
