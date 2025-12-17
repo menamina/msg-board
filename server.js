@@ -4,6 +4,9 @@ const path = require("node:path");
 const { msgRouter } = require("./routes/home");
 const newMsgRouter = require("./routes/new");
 const specificMsg = require("./routes/specificMsg");
+
+const PORT = process.env.PORT || 5000;
+
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
@@ -13,7 +16,7 @@ app.use("/", msgRouter);
 app.use("/", newMsgRouter);
 app.use("/", specificMsg);
 
-app.listen(3000, (error) => {
+app.listen(PORT, (error) => {
   if (!error) {
     console.log("server is active");
   } else {
